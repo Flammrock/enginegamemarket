@@ -2,8 +2,11 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
+
+app.set("views", path.join(__dirname, "client"));
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile('index.html')
 })
 
 app.listen(port, () => {
