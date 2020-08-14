@@ -3,7 +3,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 
-app.set("views", path.join(__dirname, "client"));
+app.use(express.static('client'));
 
 app.get('/', (req, res) => {
   res.sendFile('index.html')
